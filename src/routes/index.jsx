@@ -1,11 +1,11 @@
-import { BrowserRouter } from "react-router-dom"
-import { AuthRoutes } from "./auth.routes"
-export function Routes() {
+import { BrowserRouter } from "react-router-dom"; // Importando BrowserRouter para configuração de rotas
+import { AuthRoutes } from "./auth.routes"; // Importando AuthRoutes para as rotas de autenticação
+
+export function Routes() { // Componente para definir as rotas principais da aplicação
 
   return (
-    <BrowserRouter>
-      <AuthRoutes />
+    <BrowserRouter> {/* Utilizando BrowserRouter para definir o roteamento baseado em navegação do lado do cliente */}
+      <AuthRoutes /> {/* Renderizando as rotas de autenticação dentro do BrowserRouter */}
     </BrowserRouter>
   )
 }
-
