@@ -1,16 +1,15 @@
-import { Navigate, Route, Routes } from 'react-router-dom'; // Importando Navigate, Route e Routes do react-router-dom para configuração de rotas
-import { SignIn } from '../pages/SignIn'; // Importando o componente SignIn
-import { SignUp } from '../pages/SignUp'; // Importando o componente SignUp
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { SignIn } from '../pages/SignIn';
+import { SignUp } from '../pages/SignUp';
 
-export function AuthRoutes() { // Componente AuthRoutes para rotas de autenticação
-  const user = localStorage.getItem("@hellostarter:user"); // Obtendo usuário do localStorage
+export function AuthRoutes() {
+  const user = localStorage.getItem("@hellostarter:user");
 
   return (
     <Routes> {/* Definindo rotas */}
-      <Route path="/" element={<SignIn />} /> {/* Rota para o componente SignIn */}
-      <Route path="/register" element={<SignUp />} /> {/* Rota para o componente SignUp */}
-
-      {/* Se não houver usuário, redireciona para a página de login */}
+      <Route path="/" element={<SignIn />} />
+      <Route path="/register" element={<SignUp />} />
+      
       {!user && <Route path="*" element={<Navigate to="/" />} />}
     </Routes>
   );

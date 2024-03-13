@@ -1,18 +1,18 @@
-import { Link } from 'react-router-dom'; // Importando Link do react-router-dom para navegação
-import { Button } from '../../components/Button/input'; // Importando o componente Button
-import { Input } from '../../components/Input'; // Importando o componente Input
-import { Container, Form } from "./styles"; // Importando componentes estilizados para estilização
-import { useState } from 'react'; // Importando o hook useState do React
-import { useAuth } from "../../hooks/auth"; // Importando o hook useAuth para autenticação
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '../../components/Button/input';
+import { Input } from '../../components/Input';
+import { useAuth } from "../../hooks/auth";
+import { Container, Form } from "./styles";
 
-export function SignIn() { // Componente funcional SignIn
-  const [email, setEmail] = useState(""); // Variável de estado para o campo de email
-  const [password, setPassword] = useState(""); // Variável de estado para o campo de senha
+export function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const { SignIn } = useAuth(); // Utilizando o hook useAuth para autenticação
+  const { SignIn } = useAuth();
 
-  function handleSignIn(){ // Função para lidar com o login
-    SignIn(email, password); // Chama a função SignIn do hook useAuth passando email e senha como argumentos
+  function handleSignIn() {
+    SignIn(email, password);
   }
 
   return (
@@ -23,15 +23,15 @@ export function SignIn() { // Componente funcional SignIn
         <Input
           type="text"
           placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)} // Define o estado do email na mudança
+          onChange={(e) => setEmail(e.target.value)}
         />
         <Input
           type="password"
           placeholder="Senha"
-          onChange={(e) => setPassword(e.target.value)} // Define o estado da senha na mudança
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <Button title="Entrar" onClick={handleSignIn}/>
-        <Link to="/register">Criar Conta</Link> {/* Link para navegar para a página de registro */}
+        <Button title="Entrar" onClick={handleSignIn} />
+        <Link to="/register">Criar Conta</Link>
       </Form>
     </Container>
   )
