@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '../../components/Input';
 import { Container, Form } from './styles';
+import { Button } from './../../components/Button/input';
 
 export function SignUp() {
   const [name, setName] = useState("");
@@ -17,7 +18,6 @@ export function SignUp() {
 
       alert("Preencha todos os campos");
     }
-    o
     api.post("/users", { name, email, password })
       .then(() => {
         alert("Usuário cadastrado com sucesso");

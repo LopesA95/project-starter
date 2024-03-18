@@ -7,14 +7,14 @@ function AuthProvider({ children }) {
 
   async function handleSignIn({ email, password }) {
     try {
-      const response = await api.post("/sessions", { email, password }); o
+      const response = await api.post("/sessions", { email, password });
       const { token, user } = response.data;
 
       localStorage.setItem("@hellostarter:user", JSON.stringify(user));
       localStorage.setItem("@hellostarter:token", token);
 
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-      setData({ token, user }); o
+      setData({ token, user });
 
     } catch (error) {
       if (error.response) {
