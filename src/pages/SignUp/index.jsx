@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Input } from '../../components/Input';
 import { Container, Form } from './styles';
 import { Button } from './../../components/Button/input';
+import { api } from '../../services/api';
 
 export function SignUp() {
   const [name, setName] = useState("");
